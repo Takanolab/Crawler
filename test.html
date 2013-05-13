@@ -1,0 +1,1466 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja-jp">
+<head>
+<meta http-equiv= "X-UA-Compatible" content= "IE=9">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="copyright" content="&copy; niwango, inc.">
+<meta name="msapplication-task" content="name=ニコニコ動画 ; action-uri=http://www.nicovideo.jp/; icon-uri=http://uni.res.nimg.jp/img/favicon.ico">
+<meta property="fb:app_id" content="378853695459932">
+<title>niconico</title><base href="http://www.nicovideo.jp/">
+<link rel="alternate" media="handheld" href="http://nicomoba.jp/" />
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://sp.nicovideo.jp/" />
+<link rel="shortcut icon" href="http://uni.res.nimg.jp/img/favicon.ico">
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="http://uni.res.nimg.jp/css/ini.css?121017">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="http://uni.res.nimg.jp/css/zero_common.css?130424">
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="http://uni.res.nimg.jp/css/zero_index.css?13032902">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="http://uni.res.nimg.jp/css/timeshift.css?120401">
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="http://uni.res.nimg.jp/css/zero_theme/zero_harajuku.css?130115">
+
+
+
+<link rel="stylesheet" type="text/css" href="http://uni.res.nimg.jp/css/chothanks.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" media="all" href="http://uni.res.nimg.jp/css/ie.css?110215">
+<![endif]-->
+
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" media="all" href="http://uni.res.nimg.jp/css/ie6.css?110215">
+<![endif]-->
+<script type="text/javascript">
+
+if (typeof Nico === 'undefined') Nico = {};
+if (typeof Nico.messages === 'undefined') Nico.messages = {};
+
+</script><script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/lib/prototype.js?1.5.1.1_2"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/common.js?110215"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/swfobject.js?5"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/nicolib.js?110215"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/ads.js?110531"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/lib/ads-2.min.js?130417"></script>
+
+
+<script type="text/javascript" src="http://uni.res.nimg.jp/js/__utm.js?110928"></script><script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/base.js?120501"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/lib/jquery/jquery-1.6.1.min.js?110705"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/daily_topics/calendar.js?120515"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/daily_topics/contentslide.js?120822"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/timeshift.js?120401"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/zero_index.js?120926"></script>
+
+<script type="text/javascript"><!--
+
+var User = { id: 447988, age: 23, isPremium: false, isOver18: true, isMan: true };
+var q = "";
+var country = "";
+
+
+--></script>
+
+<script type="text/javascript">
+(function(we, ico) {
+	try {
+		we.msSiteModeCreateJumplist('niconico(Q)');
+		we.msSiteModeAddJumpListItem('ヘルプ',         'http://faq.nicovideo.jp/',           ico);
+		we.msSiteModeAddJumpListItem('アカウント設定', 'https://secure.nicovideo.jp/secure/',           ico);
+		we.msSiteModeAddJumpListItem('視聴履歴',       'http://www.nicovideo.jp/my/history',               ico);
+		we.msSiteModeAddJumpListItem('投稿動画',       'http://www.nicovideo.jp/my/video',                 ico);
+		we.msSiteModeAddJumpListItem('お気に入り',     'http://www.nicovideo.jp/my/watchlist',             ico);
+		we.msSiteModeAddJumpListItem('マイリスト',     'http://www.nicovideo.jp/my/mylist',                ico);
+		we.msSiteModeAddJumpListItem('総合ランキング', 'http://www.nicovideo.jp/uni_ranking',              ico);
+		we.msSiteModeAddJumpListItem('動画を投稿',     'http://www.upload.nicovideo.jp/upload',      ico);
+		we.msSiteModeAddJumpListItem('マイページ',     'http://www.nicovideo.jp/my/top',                   ico);
+		we.msSiteModeAddJumpListItem('ログイン',       'https://secure.nicovideo.jp/secure/login_form', ico);
+	} catch(e) {}
+})(window.external, 'http://uni.res.nimg.jp/img/favicon.ico');
+</script>
+
+<script type="text/javascript" charset="utf-8"><!--
+
+Ads.get_segment_object = function(){
+	var segment = {};
+
+	segment.age = '23';
+	segment.gender = '0';
+	return segment;
+
+};
+
+// -->
+</script>
+</head>
+
+<body class="ja-jp">
+
+	
+	
+<link rel="stylesheet" type="text/css" charset="utf-8" href="http://uni.res.nimg.jp/js/nicoheader/resources/siteHeader.css?121203">
+<link rel="stylesheet" type="text/css" charset="utf-8" href="http://uni.res.nimg.jp/js/nicoheader/resources/nicolib-CommonNotificationHeader.css?121203">
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/nicoheader/siteHeader.js?120718"></script>
+<script type="text/javascript" charset="utf-8" src="http://uni.res.nimg.jp/js/nicoheader/nicolib-CommonNotificationHeader.js?130206"></script>
+<div id="siteHeader">
+	<div id="siteHeaderInner">
+		<ul class="siteHeaderGlovalNavigation">
+			<li><a href="http://www.nicovideo.jp/"><span>niconico</span></a></li>
+			<li><a href="http://www.nicovideo.jp/video_top"><span>動画</span></a></li>
+			<li><a href="http://seiga.nicovideo.jp/"><span>静画</span></a></li>
+			<li><a href="http://live.nicovideo.jp/"><span>生放送</span></a></li>
+			<li><a href="http://ch.nicovideo.jp/?header"><span>チャンネル</span></a></li>
+			<li><a href="http://ch.nicovideo.jp/portal/blomaga?header"><span>ブロマガ</span></a></li>
+			<li class="siteHeaderOther" id="siteHeaderLeftMenu">
+				<a href="javascript:void(0);"><span>その他▼</span></a>
+				<ul id="siteHeaderLeftMenuContainer" style="display: none;">
+					<li><a href="http://app.nicovideo.jp/?header">アプリ</a></li>
+					<li><a href="http://dic.nicovideo.jp/">大百科</a></li>
+					<li><a href="http://ichiba.nicovideo.jp/">市場</a></li>
+					<li><a href="http://uad.nicovideo.jp/">ニコニ広告</a></li>
+					<li><a href="http://jk.nicovideo.jp/">実況</a></li>
+					<li><a href="http://commons.nicovideo.jp/">コモンズ</a></li>
+					<li><a href="http://com.nicovideo.jp/">コミュニティ</a></li>
+					<li><a href="http://chokuhan.nicovideo.jp/">ニコニコ直販</a></li>
+					<li><a href="http://info.nicovideo.jp/pr_nicom/">スマートフォン</a></li>
+					<li><a href="http://news.nicovideo.jp/">ニュース</a></li>
+				</ul>
+			</li>
+		</ul>
+
+		<ul class="siteHeaderMenuList">
+<!-- start notification header -->
+			<li id="siteHeaderNotification" data-nico-userId="447988" data-nico-siteId="nicovideo"
+			  data-nico-API-Date="1368083541" data-nico-API-Version="2" data-nico-locale="ja_JP"
+			  data-nico-API-Key="800bccf5e7990a579fba90a9eb3033849b88b580"
+			  data-nico-JSONP-URL="http://notify.nicovideo.jp/api/notify"
+			  data-nico-count="0" data-nico-userIconUrl="http://res.nimg.jp/img/user/thumb/blank_s.jpg"
+			  data-nico-config-nicorepores="1" data-nico-config-nicoru="1"
+			  data-nico-config-stampget="1" data-nico-config-blomagacomment="1"
+			  data-nico-isError="false" data-nico-isMaintenance="false"
+			  			>
+				<a href="/my/top" id="siteHeaderUserContainer">
+					<span class="siteHeaderAva" id="siteHeaderUserIconContainer"></span>
+					<span id="siteHeaderUserNickNameContainer">ジー さん</span>
+				</a>
+				<div class="siteHeaderNotificationContainer" id="siteHeaderNotificationContainer">
+					<dl id="siteHeaderNotificationWithNotification" style="display: none;">
+					</dl>
+					<div id="siteHeaderNotificationWithoutNotification" style="display: none;">
+						<span></span>
+						<p>あなた宛のお知らせが届くとここに表示されます。</p>
+						<p id="siteHeaderShowConfigButton" class="siteHeaderInformationOption">設定変更</p>
+					</div>
+					<dl id="siteHeaderNotificationLoading" style="display: none;">
+						<dt>お知らせ<span></span></dt>
+						<dd><span><img src="http://res.nimg.jp/img/loading.gif" /></span>お知らせを読み込んでいます…</dd>
+					</dl>
+					<dl id="siteHeaderNotificationError" style="display: none;">
+						<dt>お知らせ<span></span></dt>
+						<dd id="siteHeaderNotificationError503Detail">お知らせが取得できませんでした。しばらく待って再度お試しください。</dd>
+						<dd id="siteHeaderNotificationError503Config" style="display: none;">設定が反映できませんでした。しばらく待って再度お試しください。</dd>
+						<dd id="siteHeaderNotificationError401" style="display: none;">ログインされておりません。再度ログインしなおしてください。</dd>
+					</dl>
+					<dl id="siteHeaderNotificationMaintenance" style="display: none;">
+						<dt>お知らせ<span></span></dt>
+						<dd>只今メンテナンス中です。</dd>
+					</dl>
+					<dl id="siteHeaderNotificationOption" style="display: none;">
+						<dt>設定<span></span></dt>
+						<dd>
+							<p class="siteHeaderSwitch siteHeaderFirstChild">ニコレポコメントのお知らせ
+								<span id="siteHeaderConfigNicoreporesButton" class="siteHeaderEnable"></span>
+							</p>
+
+							<p class="siteHeaderSwitch">スタンプ取得のお知らせ
+								<span id="siteHeaderConfigStampgetButton" class="siteHeaderEnable"></span>
+							</p>
+
+							<p class="siteHeaderSwitch">ニコられた数の通知
+								<span id="siteHeaderConfigNicoruButton" class="siteHeaderEnable"></span>
+							</p>
+
+							<p class="siteHeaderSwitch lastChild">ブロマガコメントのお知らせ
+								<span id="siteHeaderConfigBlomagacommentButton" class="siteHeaderEnable"></span>
+							</p>
+							<a href="javascript:void(0);" id="siteHeaderApplyConfigButton" class="siteHeaderSubmitButtonDisable">変更を適用する</a>
+						</dd>
+						<dd class="siteHeaderInformationOption">
+							<a href="javascript:void(0);" id="siteHeaderBackDetail">一覧に戻る</a>
+							<a href="javascript:void(0);" id="siteHeaderBackDetailChanged" style="display: none;">閉じる</a>
+						</dd>
+					</dl>
+				</div>
+				<a href="/?p=premium_top&amp;sec=bar" class="siteHeaderUpgrade" id="siteHeaderNotificationPremium">
+					<small>－</small>
+					<span>プレミアム登録</span>
+				</a>
+							</li>
+<!-- end notification header -->
+			<li class="siteHeaderHorizon"><a href="http://www.upload.nicovideo.jp/upload"><span>動画を投稿</span></a></li>
+			<li><a href="uni_ranking"><span>総合ランキング</span></a></li>
+			<li class="siteHeaderOther" id="siteHeaderRightMenu">
+				<a href="javascript:void(0);"><span>メニュー▼</span></a>
+				<ul style="display: none;" id="siteHeaderRightMenuContainer">
+					<li><a href="/my/mylist">マイリスト</a></li>
+					<li><a href="/my/watchlist">お気に入り</a></li>
+					<li><a href="/my/video">投稿動画</a></li>
+					<li><a href="/my/history">視聴履歴</a></li>
+					<li><a href="https://secure.nicovideo.jp/secure/">アカウント設定</a></li>
+					<li><a href="http://point.nicovideo.jp/index/bank/&from_notification=2">ポイント購入</a></li>					<li id="siteHeaderRightMenuUnfix"><a href="javascript:void(0);">ヘッダー:<span class="siteHeaderScroll">追従</span></a></li>
+					<li id="siteHeaderRightMenuFix"><a href="javascript:void(0);">ヘッダー:<span class="siteHeaderFix">固定</span></a></li>
+					<li><a href="http://faq.nicovideo.jp/">ヘルプ</a></li>
+					<li><a href="https://secure.nicovideo.jp/secure/logout">ログアウト</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+
+						<div id="zero_lead_index"><img src="http://uni.res.nimg.jp/img/zero_index/lead_q.png" alt="niconicoの新バージョンQ公開！"><a href="http://www.nicovideo.jp/q">Qバージョンに変更</a></div>		
+<div id="main_container" style="margin: 0 auto;padding: 0 10px;position: relative;width: 976px;">
+
+
+	
+			<div id="header" class="clearfix harajuku">
+				<div class="headerIcon">
+		
+				<a href="http://www.nicovideo.jp/hidariue"><script type="text/javascript" src="http://res.nimg.jp/js/head_icon.js?111228"></script></a>
+				</div>
+				<h1 id="logo"><a href="http://www.nicovideo.jp/">ニコニコ動画</a></h1>
+				<!-- /.headerIcon -->
+						<div id="web_pc_top" class="headerBanner"></div>
+<script type="text/javascript">
+
+	(function(){
+		var segment = Ads.get_segment_object();
+		new Ads.Advertisement({zone: 38, segments: segment, impression: 2}).set('web_pc_top');
+	})();
+
+</script>
+
+<!-- /#web_pc_top -->
+	</div>
+	
+
+
+
+<div class="nicoch_modal" id="timeshift_modal" style="display:none;">
+	<div class="nicoch_modal_overlay" onclick="TimeShift.registHide()"></div>
+	<div class="nicoch_modal_window" id="watching_reservation_regist">
+		<p class="modal_close">
+			<a href="javascript:TimeShift.registHide()">&times;</a>
+		</p>
+		<div class="modal_body load_spinner" id="watching_reservation_info"></div>
+	</div>
+</div>
+
+
+
+
+<div id="searchFormWrap" class="clearfix">
+	<div id="searchFormInner">
+		<ul>
+			<li class="active"><a href="http://www.nicovideo.jp/search/" class="sVideo">動画</a></li>
+			<li><a href="http://www.nicovideo.jp/mylist_search/" class="sMylist">マイリスト</a></li>
+			<li><a href="http://seiga.nicovideo.jp/search/" class="sSeiga">静画</a></li>
+			<li><a href="http://live.nicovideo.jp/search/" class="sLive">生放送</a></li>
+		</ul>
+
+		<form id="searchForm" action="http://www.nicovideo.jp/search/" method="get" class="sVideo">
+			<div id="searchform_container">
+				<input id="searchWord" type="text" value="">
+							</div>
+			<input id="searchSubmit" type="submit" value="">
+		</form>
+	</div><!-- /#searchFormInner -->
+</div><!-- /#searchFormWrap -->
+
+<!--  -->
+<div id="contentsWrap">
+	<ul id="textInfo" class="clearfix">
+	<li><a href="http://rd.nicovideo.jp/cc/1line_top/music0506" target="_blank" style="color:#00009C;">flumpool､TEAM H､ゴルボン♪映像＆生出演</a></li>
+	<li class="icon_text"><a href="http://rd.nicovideo.jp/cc/1line_top/deargirl0507" target="_blank" style="color:#00009C;">アニサマ2013★チケット先行予約受付中！</a></li>
+	<li class="icon_text"><a href="http://rd.nicovideo.jp/cc/1line_top/ni039387" target="_blank" style="color:#00009C;">皆のゴールデンウィークはこんな感じでした</a></li>
+</ul><!-- /#textInfo -->		<div id="contents" class="clearfix">
+
+		<div id="sideNav">
+			<script type="text/javascript">
+
+(function(){
+var server_offset = 0 + 32400; //+9時間が起点なので、GMTに合わせる
+var client_offset = new Date().getTimezoneOffset() * -60;
+var getCookieValue = function(key){
+	var re = new RegExp("(?:^|;\\s*)" + escape(key) + "\\s*=\\s*([^;]*)");
+	return re.test(document.cookie) ? unescape(RegExp.$1) : null;
+};
+var setCookieValue = function(string) {
+	var domain = ".nicovideo.jp";
+	var path = "/";
+	document.cookie = string+"; domain="+domain+"; path="+path;
+};
+
+if (server_offset !== client_offset && getCookieValue("noTimezone") !== "1") {
+	var _init = function(){
+		jQuery("#timezone_offset").css("display", "inline-block");
+		jQuery("#timezone_offset_ignore").click(function(e){
+			setCookieValue("noTimezone=1");
+			jQuery("#timezone_offset").css("display", "none");
+		});
+	};
+	
+	if (window.addEventListener) {
+		window.addEventListener("DOMContentLoaded", _init, false);
+	} else {
+		try {
+			document.documentElement.doScroll("left");
+		} catch(error){
+			setTimeout(arguments.callee, 50);
+			return;
+		}
+		_init();
+	}
+}
+})();
+
+</script>
+<div id="timezone_offset" style="display: none;">
+	<span id="timezone_offset_ignore">×</span>
+	<p><span class="markNotice"></span>ジーさんのパソコンの時間と、niconicoの設定時間が異なります。</p>
+	<p><a href="https://secure.nicovideo.jp/secure/profile_edit#timezone">タイムゾーンを変更する</a></p>
+</div>
+			<div id="userStats">
+            <a href="http://www.nicovideo.jp/?p=premium_top&amp;sec=top_banner" title="ニコニコ動画プレミアム登録"><img src="http://uni.res.nimg.jp/img/zero_index/to_premium_new.png" alt="ニコニコ動画プレミアム登録"></a>
+    </div>
+
+			<div id="NewServiceList">
+
+<div id="menuContents">
+<h5>コンテンツ</h5>
+<ul class="service_sub">
+<li class="top"><a href="http://ex.nicovideo.jp/vocaloid/" class="icon_svc sub">ボカロ音楽</a></li>
+<li><a href="http://ch.nicovideo.jp/menu/anime/" class="icon_svc sub">アニメ</a></li>
+<li><a href="http://ch.nicovideo.jp/channel/npb" class="icon_svc sub">プロ野球 <img src="http://uni.res.nimg.jp/img/zero_index/icon_new.png" alt="NEW!" title="NEW!"></a></li>
+<li><a href="http://seiga.nicovideo.jp/book/" class="icon_svc sub">コミック・電子書籍</a></li>
+<li><a href="http://ch.nicovideo.jp/channel/niconicomusic" class="icon_svc sub">音楽・アーティスト</a></li>
+<li><a href="http://ch.nicovideo.jp/menu/media/" class="icon_svc sub">社会・言論</a></li>
+
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/mediamatome" class="icon_svc sub">まとめ・メディア</a></li>
+
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/movie" class="icon_svc sub">映画・ドラマ</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/nicomu" class="icon_svc sub">ミュージカル</a></li>
+</ul>
+</div>
+
+<div id="menuService">
+<h5>サービス<a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/service">一覧</a></h5>
+<ul class="service_main">
+<li class="top"><a href="http://www.nicovideo.jp/video_top/" class="icon_svc douga">動画</a></li>
+<li><a href="http://seiga.nicovideo.jp/" class="icon_svc seiga">静画</a></li>
+<li><a href="http://seiga.nicovideo.jp/manga/" class="icon_svc child">マンガ</a></li>
+<li><a href="http://live.nicovideo.jp/" class="icon_svc live">生放送</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/nsen" class="icon_svc child">Nsen</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/app" class="icon_svc app">アプリ</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/ch" class="icon_svc ch">チャンネル</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/blomaga" class="icon_svc child">ブロマガ</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/dic" class="icon_svc encyclopedia">大百科</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/ichiba" class="icon_svc ichiba">市場</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/chokuhan" class="icon_svc child">ニコニコ直販</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/uad" class="icon_svc uad">ニコニ広告</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/jk" class="icon_svc jk">実況</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/commons" class="icon_svc commons">コモンズ</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/comu" class="icon_svc community">コミュニティ</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/nivent" class="icon_svc niv">ニベント</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/news" class="icon_svc news">ニュース</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/nicog" class="icon_svc gad">ガジェット</a></li>
+</ul>
+</div>
+
+<div id="menuDevice">
+<h5>他デバイス</h5>
+<ul class="service_sub">
+<li class="top"><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/mobile" class="icon_svc sub">モバイル</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/iphone" class="icon_svc sub">スマートフォン</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/psvita" class="icon_svc sub">PS Vita</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/tv" class="icon_svc sub">テレビ</a></li>
+<li><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/wiiu" class="icon_svc sub">Wii U <img src="http://uni.res.nimg.jp/img/zero_index/icon_new.png" alt="NEW!" title="NEW!"></a></li>
+</ul>
+</div>
+
+<div id="menuR18">
+<h5>R18</h5>
+<ul class="service_sub">
+<li class="top"><a href="http://rd.nicovideo.jp/cc/nicotop_sidemenu/r18" class="icon_svc sub">成人向けコンテンツ</a></li>
+</ul>
+</div>
+</div>				<style>
+	#enjoy_container {position: relative;}
+	.enjoy_content {height: 275px; position: absolute;}
+</style>
+
+<div id="enjoy">
+<p><a id="enjoy_prev">▲</a></p><div id="enjoy_container">
+
+	<ul class="enjoy_content">
+			<li class="enjoy_s">
+						<a href="http://rd.nicovideo.jp/cc/enjoy/439a387577c3c708" title="まどか☆マギカオンライン"><img src="http://uni.res.nimg.jp/img/system/enjoy/2013/05/07/20130507190317_f7bd2.jpg" /></a>
+					</li>
+			<li class="enjoy_s">
+						<a href="http://rd.nicovideo.jp/cc/enjoy/82ca1e472377eb43" title="CLAYMORE･ロザバン･テガミバチが5巻まで無料"><img src="http://uni.res.nimg.jp/img/system/enjoy/2013/05/09/20130509125236_acb18.jpg" /></a>
+					</li>
+			<li class="enjoy_s">
+						<a href="http://rd.nicovideo.jp/cc/enjoy/f74f6e1e052b71b0" title="チャンネル会員限定！アニサマ2013先行抽選予約"><img src="http://uni.res.nimg.jp/img/system/enjoy/2013/05/07/20130507174545_c1760.jpg" /></a>
+					</li>
+			<li class="enjoy_s">
+						<a href="http://rd.nicovideo.jp/cc/enjoy/5c3aa66f9ddc49b5" title="ニコニコ三井住友VISAカード入会受付中"><img src="http://uni.res.nimg.jp/img/system/enjoy/2012/05/17/20120517182954_e1f9b.jpg" /></a>
+					</li>
+		</ul>
+	<ul class="enjoy_content">
+			<li class="enjoy_s">
+						<a href="http://rd.nicovideo.jp/cc/enjoy/3b3b43ea9632137e" title="スマホで使える★niconicoキャラ待受できました"><img src="http://uni.res.nimg.jp/img/system/enjoy/2013/03/12/20130312200119_ebc4b.gif" /></a>
+					</li>
+			<li class="enjoy_s">
+						<a href="http://rd.nicovideo.jp/cc/enjoy/76b2dd45c341e0b8" title="ニコニコポイントが無料で貰える♪"><img src="http://uni.res.nimg.jp/img/system/enjoy/2013/03/06/20130306155757_58f85.png" /></a>
+					</li>
+			<li class="enjoy_s">
+						<a href="http://rd.nicovideo.jp/cc/enjoy/0322015e7b765d82" title="ニコニコ夏マスター"><img src="http://uni.res.nimg.jp/img/system/enjoy/2013/05/02/20130502162323_721c4.jpg" /></a>
+					</li>
+			<li class="enjoy_s">
+						<a href="http://rd.nicovideo.jp/cc/enjoy/a4e60d9542c49c7f" title="春アニメ配信タイトルはコチラ♪"><img src="http://uni.res.nimg.jp/img/system/enjoy/2013/03/29/20130329151416_18982.jpg" /></a>
+					</li>
+		</ul>
+	<ul class="enjoy_content">
+			<li class="enjoy_s">
+						<a href="http://rd.nicovideo.jp/cc/enjoy/4546ad8676681a1a" title="ニコニコ超会議３開催決定！"><img src="http://uni.res.nimg.jp/img/blank.gif" longdesc="http://uni.res.nimg.jp/img/system/enjoy/2013/05/08/20130508124958_2907d.jpg" /></a>					</li>
+		</ul>
+
+</div>
+<p><a id="enjoy_next">▼</a></p></div>		</div><!-- /#sideNav -->
+
+		<div id="mainContents">
+
+			
+						<div id="today">
+<h2>2013.05.09</h2>
+<div id="today_contents_wrap" class="clearfix">
+<div id="today_contents" class="clearfix">
+			<div id="today_live_onair" class="clearfix">
+			<a href="http://live.nicovideo.jp/watch/lv132690997?ref=nicotop" class="today_onair_image" title="【将棋】名人戦◆森内俊之名人 vs 羽生善治三冠"><img src="http://nl.simg.jp/img/a58/173741.3613c2.jpg" alt="【将棋】名人戦◆森内俊之名人 vs 羽生善治三冠"><span class="clip"></span></a>
+			<ul class="today_live_playing">
+						<li><a href="http://live.nicovideo.jp/watch/lv132690997?ref=nicotop" title="【将棋】名人戦◆森内俊之名人 vs 羽生善治三冠">【将棋】名人戦◆森内俊之名人 vs 羽生善治三冠</a></li>
+						<li><a href="http://live.nicovideo.jp/watch/lv135355254?ref=nicotop" title="NY連日最高値！ソニー決算中継も">NY連日最高値！ソニー決算中継も</a></li>
+						<li><a href="http://live.nicovideo.jp/watch/lv137010817?ref=nicotop" title="菅義偉 官房長官 記者会見">菅義偉 官房長官 記者会見</a></li>
+						</ul>
+</div>
+		</div>
+				<div id="today_event" class="clearfix">
+					<a href="http://rd.nicovideo.jp/cc/info_top/78a0d3042381b1a8" class="event_image" title="アニメ『進撃の巨人』第5話"><img src="http://uni.res.nimg.jp/img/system/today/2013/05/08/20130508192719_4be7b.jpg" alt="http://uni.res.nimg.jp/img/system/today/2013/05/08/20130508192719_4be7b.jpg"></a>
+
+					<h3 class="today_event_title">イベント</h3>
+				<ul>
+								<li><a href="http://rd.nicovideo.jp/cc/info_top/78a0d3042381b1a8" class="icon_cur">アニメ『進撃の巨人』第5話</a></li>
+								<li><a href="http://rd.nicovideo.jp/cc/info_top/8d5052c05bc5ef6a" class="icon_cur">まどか･おりこ･かずみ☆マギカが1話無料！</a></li>
+								<li><a href="http://rd.nicovideo.jp/cc/info_top/488bde0de911159f" class="icon_cur">映画「闇金ウシジマくん」</a></li>
+								<li><a href="http://rd.nicovideo.jp/cc/info_top/c2e4b17b4b073409" class="icon_cur">5月病に効くゾンビ＆ホラー映画特集</a></li>
+								</ul>
+		</div>
+		
+
+
+
+
+
+
+<div id="today_foot">
+
+<div id="today_calendar">
+<div id="calendar"
+	data-selectedDate="2013/05/09"
+	data-scheduleExistDates="[&quot;2013\/05\/10&quot;,&quot;2013\/05\/11&quot;,&quot;2013\/05\/12&quot;,&quot;2013\/05\/13&quot;,&quot;2013\/05\/14&quot;,&quot;2013\/05\/15&quot;,&quot;2013\/05\/16&quot;]"
+	data-dailyTopicsStartTime="2012/05/01"
+>
+<div id="calendar_head">
+<a id="calendar_prev" href="/daily_topics/20130509">←</a>
+ <span id="calendar_year"></span>年 <span id="calendar_month"></span>月 
+<a id="calendar_next" href="/daily_topics/20130509">→</a>
+</div>
+<table class="calendar_table">
+<tr>
+<th class="calendar_0">日</th>
+<th class="calendar_1">月</th>
+<th class="calendar_2">火</th>
+<th class="calendar_3">水</th>
+<th class="calendar_4">木</th>
+<th class="calendar_5">金</th>
+<th class="calendar_6">土</th>
+</tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+</table>
+</div></div>
+
+
+<a id="today_calendar_open" href="http://rd.nicovideo.jp/cc/uni_top/cal" title="カレンダーを開く">カレンダーを開く</a>
+<a id="today_calendar_close" href="/" title="カレンダーを閉じる">カレンダーを閉じる</a>
+
+
+<p><a href="http://rd.nicovideo.jp/cc/uni_top/cal"  class="icon_cur">一覧</a></p>
+</div>			
+
+</div>
+
+</div>
+
+			
+
+<script type="text/javascript">
+
+jQuery.noConflict();
+
+jQuery(document).ready(function($){
+	var selectedTab = Cookie.get('lastSelectedTab', 0);
+	selectedTab = parseInt(selectedTab) + 1;
+	if ($('.tabcont > div:nth-child(' + selectedTab + ')').size() == 0) {
+		selectedTab = 1;
+	}
+	$('.tabcont > div:nth-child(' + selectedTab + ')').show();
+	$('.tabmenu li:nth-child(' + selectedTab + ')').addClass('active');
+
+	$('.tabmenu li a').click(function(){
+		$('.tabmenu li').removeClass('active');
+		$(this).parent().addClass('active');
+		var currentTab = $(this).attr('href');
+		$('.tabcont > div').hide();
+		$(currentTab).show();
+		var lastSelectedTab = $('.tabmenu li a').index(this);
+		Cookie.set('lastSelectedTab', lastSelectedTab, 1000*60*60*24*30, '.nicovideo.jp', '/');
+		return false;
+	});
+});
+
+</script>
+
+
+
+
+<div id="News_tab">
+	<div class="title_index">
+		<h4><a href="http://rd.nicovideo.jp/cc/nicotop_news/niconewstop">ニコニコニュース</a></h4>
+		<a class="twitter_link" href="http://twitter.com/#!/nico_nico_news" title="nico_nico_newsをフォロー" target="_blank">フォロー</a>
+	</div>
+		<div id="Tabs">
+				<div class="tabmenu clearfix">
+						<ul>
+								<li><a href="#topic">トピックス</a></li>
+								<li><a href="#hard">かため</a></li>
+								<li><a href="#soft">やわめ</a></li>
+								<li><a href="#rank">ランキング</a></li>
+								<li><a href="#pick">どうぶつ大好き</a></li>						</ul>
+				</div>
+				<div class="tabcont">
+						<div id="topic">
+								<ul>
+																			<li><a href="http://news.nicovideo.jp/watch/nw608121?topic">共通番号法案が衆議院を通過</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_video.gif" alt="video">										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_new.gif" alt="NEW">										</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607478?topic">スパコン京&quot;100倍&quot;の後継開発へ</a>
+																				<img src="http://uni.res.nimg.jp/img/icon/icon_topics_new.gif" alt="NEW">										</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607723?topic">家族に放置された40代男性の人生</a>
+																														</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607450?topic">フォトショCS7はいつ出るの？</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_new.gif" alt="NEW">										</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607893?topic">三村のツイッターが自由すぎる</a>
+																				<img src="http://uni.res.nimg.jp/img/icon/icon_topics_new.gif" alt="NEW">										</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw606282?topic">500万円最高級ゲーム環境 ソニー</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607624?topic">「進撃の巨人」内容異なり謝罪</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607766?topic">我慢したオナラはどこに消える？</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																	</ul>
+																<div class="news_imgbox">
+									<div class="news_thumb">
+										<a href="http://news.nicovideo.jp/watch/nw607714/photo/1?topic" title="ナマケグマ、母離れはまだ先？"><img src="http://uni.res.nimg.jp/img/system/news/20130509/607714.jpg?1368057904"></a>
+									</div>
+									<p>ナマケグマ、母離れはまだ先？</p>
+								</div>
+																<p class="tab_caption">&nbsp;</p>
+								<p class="news_link"><a href="http://news.nicovideo.jp/?topic">記事一覧</a></p>
+						</div>
+						<div id="hard">
+								<ul>
+																			<li><a href="http://news.nicovideo.jp/watch/nw608042?hard">広島で続く猫惨殺事件　現在26件</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607587?hard">韓国大統領、米議会で日本を批判</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607491?hard">食べログの情報削除求め提訴</a>
+																														</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607505?hard">高橋尚子、JOCの新理事候補に</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607549?hard">マック原田氏、ソニー取締役候補</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607700?hard">パート女性、早産リスク高め</a>
+																														</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607432?hard">トヨタ5年ぶり営業益1.3兆円回復</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607299?hard">キユーピー、マヨネーズ値上げ</a>
+																														</li>
+																	</ul>
+																<div class="news_imgbox">
+										<div class="news_thumb">
+											<a href="http://news.nicovideo.jp/watch/nw606800/photo/1?hard" title="マウス一体型キーボード"><img src="http://uni.res.nimg.jp/img/system/news/20130509/606800.jpg?1367989202"></a>
+										</div>
+										<p>マウス一体型キーボード</p>
+								</div>
+																<p class="tab_caption">政治・社会、ビジネスや海外の話題</p>
+						</div>
+						<div id="soft">
+								<ul>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607006?soft">織田裕二、ダメ親父役で新境地</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_new.gif" alt="NEW">										</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607269?soft">PSVita、品不足で売り上げ激減</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607578?soft">台湾で「変態仮面」旋風、TVCMも</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw606775?soft">「固定電話恐怖症」克服する方法</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607240?soft">「マケン姫っ！」再びTVアニメ化</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607234?soft">flumpool&quot;ヘルプ要員&quot;ニコ生発表</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw606553?soft">「顎ヒゲ」に悩む女性が急増中</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw606970?soft">AKB解雇の西川、乃木坂46に加入</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																	</ul>
+																<div class="news_imgbox">
+									<div class="news_thumb">
+										<a href="http://news.nicovideo.jp/watch/nw608097/photo/1?soft" title="武井咲が&quot;特別講師&quot;生徒が大興奮"><img src="http://uni.res.nimg.jp/img/system/news/20130509/608097.jpg?1368074549"></a>
+									</div>
+									<p>武井咲が&quot;特別講師&quot;生徒が大興奮</p>
+								</div>
+																<p class="tab_caption">エンタメやアニメ・ゲーム、スポーツ、恋愛の話題</p>
+						</div>
+						<div id="rank">
+								<ul class="news_ranking">
+																			<li class="news_rank1"><span>1</span><a href="http://news.nicovideo.jp/watch/nw606551?rank">タイトルが改変されすぎなラノベ</a></li>
+																			<li class="news_rank2"><span>2</span><a href="http://news.nicovideo.jp/watch/nw606017?rank">「日本より中国に親近感」韓国</a></li>
+																			<li class="news_rank3"><span>3</span><a href="http://news.nicovideo.jp/watch/nw606580?rank">韓国大統領「正しい歴史認識を」</a></li>
+																			<li class="news_rank4"><span>4</span><a href="http://news.nicovideo.jp/watch/nw605935?rank">今さら聞けない「CPU」の意味</a></li>
+																			<li class="news_rank5"><span>5</span><a href="http://news.nicovideo.jp/watch/nw606565?rank">実写&quot;魔女宅&quot;キキ役が心境語る</a></li>
+																			<li class="news_rank6"><span>6</span><a href="http://news.nicovideo.jp/watch/nw604910?rank">女性使用中に公衆便所が爆発</a></li>
+																			<li class="news_rank7"><span>7</span><a href="http://news.nicovideo.jp/watch/nw607587?rank">韓国大統領、米議会で日本を批判</a></li>
+																			<li class="news_rank8"><span>8</span><a href="http://news.nicovideo.jp/watch/nw605144?rank">就活生が見た企業の&quot;不快な対応&quot;</a></li>
+																	</ul>
+								<ul class="news_graph">
+																																																																																																																																																																																																																																																																																																																																																																							
+																				<li><a href="http://news.nicovideo.jp/watch/nw606551?rank#BL_TWITTER" class="graph" style="width:130px;" title="タイトルが改変されすぎなラノベ">tweet</a><a href="http://news.nicovideo.jp/watch/nw606551?rank#BL_TWITTER" class="news_tweet">650</a></li>
+																													
+																				<li><a href="http://news.nicovideo.jp/watch/nw606017?rank#BL_TWITTER" class="graph" style="width:93.4px;" title="「日本より中国に親近感」韓国">tweet</a><a href="http://news.nicovideo.jp/watch/nw606017?rank#BL_TWITTER" class="news_tweet">467</a></li>
+																													
+																				<li><a href="http://news.nicovideo.jp/watch/nw606580?rank#BL_TWITTER" class="graph" style="width:87.8px;" title="韓国大統領「正しい歴史認識を」">tweet</a><a href="http://news.nicovideo.jp/watch/nw606580?rank#BL_TWITTER" class="news_tweet">439</a></li>
+																													
+																				<li><a href="http://news.nicovideo.jp/watch/nw605935?rank#BL_TWITTER" class="graph" style="width:86.8px;" title="今さら聞けない「CPU」の意味">tweet</a><a href="http://news.nicovideo.jp/watch/nw605935?rank#BL_TWITTER" class="news_tweet">434</a></li>
+																													
+																				<li><a href="http://news.nicovideo.jp/watch/nw606565?rank#BL_TWITTER" class="graph" style="width:75.8px;" title="実写&quot;魔女宅&quot;キキ役が心境語る">tweet</a><a href="http://news.nicovideo.jp/watch/nw606565?rank#BL_TWITTER" class="news_tweet">379</a></li>
+																													
+																				<li><a href="http://news.nicovideo.jp/watch/nw604910?rank#BL_TWITTER" class="graph" style="width:71.2px;" title="女性使用中に公衆便所が爆発">tweet</a><a href="http://news.nicovideo.jp/watch/nw604910?rank#BL_TWITTER" class="news_tweet">356</a></li>
+																													
+																				<li><a href="http://news.nicovideo.jp/watch/nw607587?rank#BL_TWITTER" class="graph" style="width:64.6px;" title="韓国大統領、米議会で日本を批判">tweet</a><a href="http://news.nicovideo.jp/watch/nw607587?rank#BL_TWITTER" class="news_tweet">323</a></li>
+																													
+																				<li><a href="http://news.nicovideo.jp/watch/nw605144?rank#BL_TWITTER" class="graph" style="width:64px;" title="就活生が見た企業の&quot;不快な対応&quot;">tweet</a><a href="http://news.nicovideo.jp/watch/nw605144?rank#BL_TWITTER" class="news_tweet">320</a></li>
+																										</ul>
+								<p class="tab_caption">過去24時間のツイート</p>
+								<p class="news_link"><a href="http://news.nicovideo.jp/ranking/tweet">ランキング一覧</a></p>
+						</div>
+												<div id="pick">
+								<ul>
+																			<li><a href="http://news.nicovideo.jp/watch/nw605763?pick">暗闇で光る羊が誕生</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw602707?pick">ホワイトタイガー赤ちゃんを公開</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw600937?pick">シロクマ赤ちゃん、こんにちわ</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw574396?pick">チワワが猛犬から8歳女の子救う</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw532615?pick">10年前に別れた愛犬と偶然再会</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw477372?pick">黒猫が中学校の&quot;名誉指導員&quot;に</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw295402?pick">英バンダイの倉庫を守る「番猫」</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																			<li><a href="http://news.nicovideo.jp/watch/nw607459?pick">移動動物園でヤマアラシ3匹脱走</a>
+										<img src="http://uni.res.nimg.jp/img/icon/icon_topics_photo.gif" alt="photo">																				</li>
+																	</ul>
+																<div class="news_imgbox">
+									<div class="news_thumb">
+										<a href="http://news.nicovideo.jp/watch/nw597502/photo/1?pick" title="猫から犬へ政権交代"><img src="http://uni.res.nimg.jp/img/system/news/20130508/597502.jpg?1367054456"></a>
+									</div>
+									<p>猫から犬へ政権交代</p>
+								</div>
+																<p class="tab_caption">毎日変わる、ホットな話題を特集</p>
+						</div>
+										</div>
+		</div>
+		<!-- /tabs -->
+
+</div>			<div id="entertainment">
+	<p><a href="" id="entertainment_prev">←</a></p>
+	<div id="entertainment_container">
+				<div class="entertainment_content colorset00">
+			<h3><a href="http://rd.nicovideo.jp/cc/nicotop_entame/5cd1517d3ad1ad76">対決！魔法少女おりこ★マギカ！</a></h3>
+			<div class="clearfix">
+								<a href="http://rd.nicovideo.jp/cc/nicotop_entame/5cd1517d3ad1ad76" class="entame_image"><img src="http://uni.res.nimg.jp/img/system/entertainment/2013/05/07/20130507190643_6e85c.jpg" /></a>
+								<dl>			
+				<dt>期間限定「魔法少女vs魔法少女」が開幕！レイドボス魔法少女「美国織莉子」を倒せ！！</dt>
+				<dd><a href="http://rd.nicovideo.jp/cc/nicotop_entame/09de54889069b9fb" class="icon_cur_white">攻略情報★まどマギオンラインCH</a></dd>
+				</dl>
+			</div>
+		</div>
+				<div class="entertainment_content colorset04">
+			<h3><a href="http://rd.nicovideo.jp/cc/nicotop_entame/90f31da0284f1b48">『牙狼＜GARO＞～闇を照らす者～』</a></h3>
+			<div class="clearfix">
+								<a href="http://rd.nicovideo.jp/cc/nicotop_entame/90f31da0284f1b48" class="entame_image"><img src="http://nl.simg.jp/img/a59/176151.fb2698.jpg" /></a>
+								<dl>			
+				<dt>特撮アクションドラマ 最新シリーズ「牙狼＜GARO＞～闇を照らす者～」を毎週金曜23時～無料放送！</dt>
+				<dd><a href="http://rd.nicovideo.jp/cc/nicotop_entame/6f8ccdf155c4fe5d" class="icon_cur_white">放送スケジュールはコチラ！</a></dd>
+				</dl>
+			</div>
+		</div>
+				<div class="entertainment_content colorset02">
+			<h3><a href="http://rd.nicovideo.jp/cc/nicotop_entame/56287d83a9a3799a">CLAYMORE･ロザバン･テガミバチ★無料</a></h3>
+			<div class="clearfix">
+								<a href="http://rd.nicovideo.jp/cc/nicotop_entame/56287d83a9a3799a" class="entame_image"><img src="http://uni.res.nimg.jp/img/blank.gif" longdesc="http://uni.res.nimg.jp/img/system/entertainment/2013/05/09/20130509122653_f24a8.jpg" /></a>								<dl>			
+				<dt>アニメ化されたジャンプSQの大人気作品が今だけ１～５巻まで無料で読める！</dt>
+				<dd><a href="http://rd.nicovideo.jp/cc/nicotop_entame/aa7edbf379a5154e" class="icon_cur_white">さっそく読んでみる！</a></dd>
+				</dl>
+			</div>
+		</div>
+				<div class="entertainment_content colorset01">
+			<h3><a href="http://rd.nicovideo.jp/cc/nicotop_entame/8ce09b4f1cebaf7f">5月病に効くホラー＆ゾンビ映画特集</a></h3>
+			<div class="clearfix">
+								<a href="http://rd.nicovideo.jp/cc/nicotop_entame/8ce09b4f1cebaf7f" class="entame_image"><img src="http://uni.res.nimg.jp/img/blank.gif" longdesc="http://nl.simg.jp/img/a61/182949.afd301.jpg" /></a>								<dl>			
+				<dt>「コリン LOVE OF THE DEAD」、「サバイバル・オブ・ザ・デッド」、「案山子」ほか無料放送……</dt>
+				<dd><a href="http://rd.nicovideo.jp/cc/nicotop_entame/ceeb78ba13290496" class="icon_cur_white">ラインナップはこちら</a></dd>
+				</dl>
+			</div>
+		</div>
+				</div>
+	<p><a href="" id="entertainment_next">→</a></p>
+</div>			<div id="feature">
+	
+	<p><a href="" id="feature_prev">←</a></p>
+	
+	<div id="feature_container">
+						<div class="feature_content clearfix">
+							<div class="title_index">
+								<h4>みんなのニコニコ超会議２レポート集まったよー！</h4>
+							</div>
+						<div class="feature_article">
+						<div class="feature_head clearfix">
+							<div class="feature_main_image">
+								<a href="http://rd.nicovideo.jp/cc/nicotop_tokushu/194c7c7b9a421099"><img src="http://uni.res.nimg.jp/img/system/feature/2013/04/28/20130428232959_804f4.png"></a>
+							</div>
+							
+							<div class="feature_description">
+								<p><a href="http://rd.nicovideo.jp/cc/nicotop_tokushu/194c7c7b9a421099">たのしかった超会議２のおもいで</a></p>
+								<p>ユーザーのみなさんに書いていただいた超会議２のレポートをまとめましたので紹介します！</p>
+							</div>
+							</div>
+								<ul>
+												<li><a href="http://rd.nicovideo.jp/cc/nicotop_tokushu/97aecea59d2eb56d">200系車内案内図当選したった</a></li>
+												<li><a href="http://rd.nicovideo.jp/cc/nicotop_tokushu/eae42f9b6e4d9117">「しげるカレー」</a></li>
+												<li><a href="http://rd.nicovideo.jp/cc/nicotop_tokushu/1d857e8c8ddcf125">アルパカ「」</a></li>
+												<li><a href="http://rd.nicovideo.jp/cc/nicotop_tokushu/04c944b645cca9e0">待機列のお楽しみ</a></li>
+												<li><a href="http://rd.nicovideo.jp/cc/nicotop_tokushu/08d60e738c9d7bd7">おじさんにはたまらない</a></li>
+												<li><a href="http://rd.nicovideo.jp/cc/nicotop_tokushu/25f4df1d8e248968">安倍首相に会う</a></li>
+											</ul>
+								
+				</div>
+			</div>
+		</div>
+	<p><a href="" id="feature_next">→</a></p>
+
+</div>
+ 
+			
+			<div id="hotVideo" class="videoList">
+	<h3 class="title_light">話題のコンテンツ</h3>
+			<div class="listWrap">
+		<ul class="clearfix">
+					<li>
+				<a href="http://www.flog.jp/w.php/http://www.nicovideo.jp/watch/sm19231622?top_flog"><img src="http://tn-skr3.smilevideo.jp/smile?i=19231622" alt=""></a>
+				<a href="http://www.flog.jp/w.php/http://www.nicovideo.jp/watch/sm19231622?top_flog" class="videoTitle">前世はキツツキです</a>
+			</li>
+					<li>
+				<a href="http://www.flog.jp/w.php/http://www.nicovideo.jp/watch/sm5748679?top_flog"><img src="http://tn-skr4.smilevideo.jp/smile?i=5748679" alt=""></a>
+				<a href="http://www.flog.jp/w.php/http://www.nicovideo.jp/watch/sm5748679?top_flog" class="videoTitle">何かに目覚めるかもしれない画像集</a>
+			</li>
+					<li>
+				<a href="http://www.flog.jp/w.php/http://www.nicovideo.jp/watch/sm20662670?top_flog"><img src="http://tn-skr3.smilevideo.jp/smile?i=20662670" alt=""></a>
+				<a href="http://www.flog.jp/w.php/http://www.nicovideo.jp/watch/sm20662670?top_flog" class="videoTitle">【プレイ動画】激おこぷんぷん丸</a>
+			</li>
+					<li>
+				<a href="http://www.flog.jp/w.php/http://www.nicovideo.jp/watch/sm20693312?top_flog"><img src="http://tn-skr1.smilevideo.jp/smile?i=20693312" alt=""></a>
+				<a href="http://www.flog.jp/w.php/http://www.nicovideo.jp/watch/sm20693312?top_flog" class="videoTitle">「限定曲・・・だと！？」ドン！</a>
+			</li>
+				</ul>
+	</div><!-- /.listWrap -->
+	<p class="link_right"><a href="http://www.flog.jp/?top_flog">powered by flog</a></p>
+	</div><!-- /#hotVideo -->			<div id="pickup">
+	<div class="listWrap">
+		<ul class="clearfix">
+							<li class="comic">
+					<div class="pick_thumb"><a href="http://rd.nicovideo.jp/cc/nicotop_seiga/cm5797"><img src="http://uni.res.nimg.jp/img/system/user_work/2013/04/23/20130423115737_1c92c.jpg" alt="携帯擬人化してみた"></a>
+												<span>マンガ</span>
+											</div>
+					<p><a href="http://rd.nicovideo.jp/cc/nicotop_seiga/cm5797">携帯擬人化してみた</a></p>
+				</li>
+							<li class="illust">
+					<div class="pick_thumb"><a href="http://rd.nicovideo.jp/cc/nicotop_seiga/2im3070249"><img src="http://uni.res.nimg.jp/img/system/user_work/2013/05/09/20130509122033_3cfb6.jpg" alt="嘘だと言ってよ"></a>
+												<span>イラスト</span>
+											</div>
+					<p><a href="http://rd.nicovideo.jp/cc/nicotop_seiga/2im3070249">嘘だと言ってよ</a></p>
+				</li>
+							<li class="illust">
+					<div class="pick_thumb"><a href="http://rd.nicovideo.jp/cc/nicotop_seiga/2im3064195"><img src="http://uni.res.nimg.jp/img/system/user_work/2013/05/09/20130509121335_b6ba0.jpg" alt="かにかにかにかに"></a>
+												<span>イラスト</span>
+											</div>
+					<p><a href="http://rd.nicovideo.jp/cc/nicotop_seiga/2im3064195">かにかにかにかに</a></p>
+				</li>
+							<li class="illust">
+					<div class="pick_thumb"><a href="http://rd.nicovideo.jp/cc/nicotop_seiga/im2997085"><img src="http://uni.res.nimg.jp/img/system/user_work/2013/04/23/20130423115537_e699a.jpg" alt="Lilyちゃんかっこいい"></a>
+												<span>イラスト</span>
+											</div>
+					<p><a href="http://rd.nicovideo.jp/cc/nicotop_seiga/im2997085">Lilyちゃんかっこいい</a></p>
+				</li>
+					</ul>
+	</div>
+<p class="pick_link"><a href="http://rd.nicovideo.jp/cc/nicotop_seiga/top" class="icon_cur">ニコニコ静画</a></p>
+</div>
+            
+			<div id="uadVideo" class="videoList">
+	<h3 class="title_uad"><span class="icon_svc uad">ユーザーが宣伝している動画</span></h3>
+	<div class="listWrap">
+			<ul class="clearfix">
+							<li>
+				<p><span>789900</span>pt</p>
+				<a href="http://rd.nicovideo.jp/cc/uni_top/uadvideo?cc_video_id=sm20298499"><img src="http://tn-skr4.smilevideo.jp/smile?i=20298499" alt=""></a>
+				<a class="videoTitle" href="http://rd.nicovideo.jp/cc/uni_top/uadvideo?cc_video_id=sm20298499">インド人怖え</a>
+			</li>
+					<li>
+				<p><span>19600</span>pt</p>
+				<a href="http://rd.nicovideo.jp/cc/uni_top/uadvideo?cc_video_id=sm20793883"><img src="http://tn-skr4.smilevideo.jp/smile?i=20793883" alt=""></a>
+				<a class="videoTitle" href="http://rd.nicovideo.jp/cc/uni_top/uadvideo?cc_video_id=sm20793883">【しましまP】そら【初音ミク＆結月ゆか...</a>
+			</li>
+					<li>
+				<p><span>108200</span>pt</p>
+				<a href="http://rd.nicovideo.jp/cc/uni_top/uadvideo?cc_video_id=sm20799464"><img src="http://tn-skr1.smilevideo.jp/smile?i=20799464" alt=""></a>
+				<a class="videoTitle" href="http://rd.nicovideo.jp/cc/uni_top/uadvideo?cc_video_id=sm20799464">【愛川こずえ・柊木りお】アカツキアラ...</a>
+			</li>
+					<li>
+				<p><span>21100</span>pt</p>
+				<a href="http://rd.nicovideo.jp/cc/uni_top/uadvideo?cc_video_id=sm20805037"><img src="http://tn-skr2.smilevideo.jp/smile?i=20805037" alt=""></a>
+				<a class="videoTitle" href="http://rd.nicovideo.jp/cc/uni_top/uadvideo?cc_video_id=sm20805037">『Gears of Love』を歌ってみた【ヲタみ...</a>
+			</li>
+				</ul>
+		</div><!-- /.listWrap -->
+
+	<p class="link_right">前日デイリーTOP１０より <a href="http://uad.nicovideo.jp/" class="">ニコニ広告</a></p>
+</div><!-- /#uadVideo -->			
+
+
+<div id="Blomaga_tab">
+
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	$('.blomagatabmenu li a').click(function(){
+		$('.blomagatabmenu li').removeClass('active');
+		$(this).parent().addClass('active');
+		var currentTab = $(this).attr('href');
+		$('.blomagatabcontinner').removeClass('active');
+		$(currentTab).addClass('active');
+		return false;
+	});
+});
+</script>
+
+
+
+
+	<div class="title_index">
+		<h4><a href="http://ch.nicovideo.jp/blog">ブロマガ</a></h4>
+	</div>
+
+
+	<div class="tabs">
+
+                <div id="blomaga_copy">
+			            <p><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/gw2013">ぼく、わたしのGWのおもいで</a></p>
+			
+        </div>
+
+
+		<div class="blomagatabmenu clearfix">
+			<ul>
+				<li class="active"><a href="#blomaga_article">記事</a></li>
+				<li ><a href="#blomaga_ranking">ランキング</a></li>
+			</ul>
+		</div><!-- /.blomagatabmenu -->
+
+
+        
+
+		<div class="blomagatabcont">
+
+			<div id="blomaga_article" class="blomagatabcontinner active">
+
+								<div id="blomaga_subject">
+				<div class="title_blomaga_new">
+					<h5>話題の記事</h5>
+                </div>
+
+				<div>
+
+					<ul class="blog_rankList">
+
+						<li class="clearfix">
+
+                        <a class="blomaga_thumb_91" href="http://rd.nicovideo.jp/cc/nicotop_blomaga/pickupar1?cc_article_id=219522">
+														<img src="http://ch.res.nimg.jp/img/system/blog_author/ch1022.jpg" alt="">
+							                        </a>
+
+                        <p class="blomaga_info">
+														<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png" style="vertical-align:baseline;">
+														<a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/pickupar1?cc_article_id=219522" class="articleTtl">GACKTがホリエモンと…</a>
+							<span class="go_blogpage"><a href="http://ch.nicovideo.jp/gackt/blomaga">GACKTの中出し・生放送新聞</a></span>
+							<span>ボクはここにいる。スタジオの中だ。どこの？都内のさ。そう、、、いよいよ始まるんだ。もうすぐ、始まるんだ。</span>
+						</p>
+
+                        </li>
+
+												<li>
+														<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png">
+														<a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/pickupar2?cc_article_id=221566">
+SPA！も新しい憲法試案を考えて...</a>
+							<span class="blogTtl_s">[「ニコSPA！政策論壇」オープン]</span>
+						</li>
+						
+												<li>
+														<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png">
+														<a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/pickupar3?cc_article_id=221628">ジャーナリスト堀潤の新しい活動...</a>
+							<span class="blogTtl_s">[ゲキビズ田原通信]</span>
+						</li>
+						
+												<li>
+														<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png">
+														<a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/pickupar4?cc_article_id=221478">読んでもらえるのは3分間だけ！ブ...</a>
+							<span class="blogTtl_s">[海燕のゆるオタ残念教養講座]</span>
+						</li>
+						
+												<li>
+														<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png">
+														<a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/pickupar5?cc_article_id=217308">『無限の住人』復讐劇から群像劇...</a>
+							<span class="blogTtl_s">[発見！僕の私の電子書籍]</span>
+						</li>
+						
+					</ul>
+				</div><!-- /#blomaga_subject -->
+				<p align="right"><a class="icon_cur" href="http://rd.nicovideo.jp/cc/nicotop_blomaga/blmagarlist">ブロマガ記事一覧</a></p>
+				</div>
+				
+
+								<div class="blomaga_new">
+
+                    <div class="title_blomaga_new">
+						<h5>人気の記事</h5>
+                    </div>
+
+					<ul class="blog_rankList">
+					<!--<ul class="link_list">-->
+																										<li class="clearfix blomaga_thumb_91_list">
+								<div>
+								<a class="blomaga_thumb_91" href="http://bestgram.net/articles/9072.html">
+
+									<img src="http://articleimage.nicoblomaga.jp/common/img/default_thumbnail.jpg" alt="">
+									
+								</a>
+								</div>
+								<div>
+								<p class="blomaga_info">
+
+																<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png" style="vertical-align:baseline;">
+								
+									<a href="http://bestgram.net/articles/9072.html" class="articleTtl">【5/8海外報道まとめ】中国紙「日...</a>
+									<span class="go_blogpage"><a href="http://bestgram.net">ベストグラム</a></span>
+								</p>
+								</div>
+							</li>
+																									<li>
+																<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png" style="vertical-align:baseline;">
+																<a href="http://mokasoku.blomaga.jp/articles/25428.html">中二病でも恋がしたい2期制作決定ｗｗ...</a>
+								<span class="blogTtl_s">[もかそく！]</span>
+							</li>
+																									<li>
+																<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png" style="vertical-align:baseline;">
+																<a href="http://ace-ch.net/articles/7970.html">アンチが最も少ない作品って何だと思う？</a>
+								<span class="blogTtl_s">[エースチャンネル]</span>
+							</li>
+																									<li>
+																<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png" style="vertical-align:baseline;">
+																<a href="http://all-a.org/articles/12380.html">おでんで戦力外通告したい具</a>
+								<span class="blogTtl_s">[なんでもオールA＠...]</span>
+							</li>
+																									<li>
+																<img src="http://uni.res.nimg.jp/img/zero_index/theme/harajuku/icon_cur.png" style="vertical-align:baseline;">
+																<a href="http://kojikisokuhou.com/articles/7977.html">神奈川県警「うわっ…私の年収、高すぎ...</a>
+								<span class="blogTtl_s">[【乞食速報】]</span>
+							</li>
+																	</ul>
+
+                </div>
+								<p align="right"><a class="icon_cur" href="http://rd.nicovideo.jp/cc/nicotop_blomaga/mediaarlist">まとめ・メディア記事一覧</a></p>
+			</div>
+
+            
+
+			<div id="blomaga_ranking" class="blomagatabcontinner">
+
+
+                <div>
+
+
+                    <div>
+                        <div class="title_blomaga_new">
+                            <h5>週間ブロマガランキング</h5>
+                        </div>
+
+                        <ul class="blog_rankList">
+						                        							                            <li>
+								<a class="blomaga_thumb_91" href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmweekrank1?cc_ch_id=1505">
+																											<img src="http://ch.res.nimg.jp/img/system/blog/ch1505.jpg" alt="">
+																		<img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank1.png?1221" alt="1" class="rankIcon">
+								</a>
+                            </li>
+													                            <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank1.png?1221" alt="1" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmweekrank1?cc_ch_id=1505">鳥海浩輔・安元洋貴の禁断生ラジオ</a></li>
+						                        							                            <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank2.png?1221" alt="2" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmweekrank2?cc_ch_id=2570394">明治東亰恋伽新聞</a></li>
+						                        							                            <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank3.png?1221" alt="3" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmweekrank3?cc_ch_id=2547126">Dr.HAYAMI（速水奨）のS.S.D.S.</a></li>
+						                        							                            <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank4.png?1221" alt="4" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmweekrank4?cc_ch_id=2571478">アイドルマスター ミリオンラジオ！</a></li>
+						                        							                            <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank5.png?1221" alt="5" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmweekrank5?cc_ch_id=65001">堀江貴文 ブログでは言えない話</a></li>
+						                        </ul>
+
+                    </div><!-- /#blomaga_zooming -->
+
+
+                    <div class="blomaga_new">
+                        <div class="title_blomaga_new">
+                            <h5>トータルブロマガランキング</h5>
+                        </div>
+
+                                                <div>
+
+
+
+                            <ul class="blog_rankList">
+                                                                                                                        <li>
+                                    <a class="blomaga_thumb_91" href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmtotalrank1?cc_ch_id=1022">
+                                                                                                                        <img src="http://ch.res.nimg.jp/img/system/blog/ch1022.jpg" alt="">
+                                                                                <img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank1.png?1221" alt="1" class="rankIcon">
+                                    </a>
+                                </li>
+                                                                                                <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank1.png?1221" alt="1" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmtotalrank1?cc_ch_id=1022">GACKTの中出し・生放送新聞</a></li>
+                                                                                                                        <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank2.png?1221" alt="2" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmtotalrank2?cc_ch_id=65001">堀江貴文 ブログでは言えない話</a></li>
+                                                                                                                        <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank3.png?1221" alt="3" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmtotalrank3?cc_ch_id=923">岡田斗司夫のニコ生では言えない話</a></li>
+                                                                                                                        <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank4.png?1221" alt="4" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmtotalrank4?cc_ch_id=1177">久田将義責任編集 ニコ生ナックルズマガジン</a></li>
+                                                                                                                        <li class="blomaga_li18px"><img src="http://uni.res.nimg.jp/img/zero_index/icon_blomaga_lank5.png?1221" alt="5" class="rankIcon"><a href="http://rd.nicovideo.jp/cc/nicotop_blomaga/bmtotalrank5?cc_ch_id=1505">鳥海浩輔・安元洋貴の禁断生ラジオ</a></li>
+                                                        </ul>
+
+                            
+                        </div>
+                                                </div><!-- /#blomaga_total -->
+                        <p align="right"><a class="icon_cur" href="http://rd.nicovideo.jp/cc/nicotop_blomaga/blomagalist">ブロマガ一覧</a></p>
+                        </div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+		</div><!-- /#mainContents -->
+
+		<div id="sideContents">
+			<div style="height:240px;">
+	<div id="web_pc_premium" class="sideBanner"></div>
+				</div>
+
+
+			<div id="nicoNews">
+		<div class="contents_box">
+				<div class="title_index">
+						<h4>ニコニコからのお知らせ</h4>
+						<a href="http://twitter.com/#!/nico_nico_info" class="twitter_link" title="nico_nico_infoをフォロー" target="_blank">フォロー</a>
+						<a href="http://www.facebook.com/niconico.official" class="facebook_link" title="facebookページへ" target="_bkank">Facebookページへ</a>
+					</div>
+				<ul class="link_list">
+																								<li><a href="http://blog.nicovideo.jp/niconews/ni039426.html" title="05月07日20時">チュートリアル徳井「鶯谷フィルハーモニー」...</a></li>
+																								<li><a href="http://blog.nicovideo.jp/niconews/ni039418.html" title="05月06日23時">ニコラジアシスタントMC募集オーディション開催！</a></li>
+																								<li><a href="http://blog.nicovideo.jp/niconews/ni039390.html" title="05月02日12時">【アニサマ2013】チケット先行抽選予約 Dear G...</a></li>
+																								<li><a href="http://blog.nicovideo.jp/niconews/ni039289.html" title="05月02日00時">【1～5巻無料】CLAYMORE・テガミバチ・ロザリ...</a></li>
+																																										<li><a href="http://blog.nicovideo.jp/niconews/ni039444.html" title="05月09日15時">明坂聡美 大久保瑠美出演 ムシブギョー特番</a></li>
+																																																																																																																						</ul>
+				<p class="link_right"><a href="http://blog.nicovideo.jp/niconews/" class="icon_cur">一覧</a></p>
+		</div>
+</div>
+<!-- /#nicoNews -->			<div id="cyouthank">
+  <img src="http://uni.res.nimg.jp/img/zero_index/banner/cyouthank/title.png" alt="">
+  <div id="content" class="contents_box">
+   <!-- 来場者数 -->
+      <div id="count">
+        <ul class="count1">
+          <li class="real">来場者数<br><span>103,561</span>人</li>
+          <li class="net">来場者数<br><span>5,094,944</span>人</li>
+        </ul>
+      </div>
+
+      <ul id="cyoukaigi2">
+        <li class="title">◆ニコニコ超会議２</li>
+        <li class="link"><a href="http://rd.nicovideo.jp/cc/cp/chofbtop" target="_blank">超会議２の出来事をFacebookで詳しく見る</a></li>
+        <li class="link"><a href="http://rd.nicovideo.jp/cc/cp/choblmgrepo">たのしかったニコニコ超会議２</a></li>
+        <li class="link"><a href="http://rd.nicovideo.jp/cc/cp/cho2day1photo">写真で振り返ろう超会議2</a></li>
+        <li class="link2"><a href="http://rd.nicovideo.jp/cc/cp/thankscho2">ニコニコ超会議２公式サイト</a></li>
+      </ul>
+      <ul id="cyoupaty2">
+        <li class="title">◆ニコニコ超パーティーII</li>
+        <li class="link"><a href="http://rd.nicovideo.jp/cc/cp/chopa2ts1">ニコニコ超パーティーII 【1日目】を見る</a></li>
+        <li class="link"><a href="http://rd.nicovideo.jp/cc/cp/chopa2ts2">ニコニコ超パーティーII 【2日目】を見る</a></li>
+        <li class="link2"><a href="http://rd.nicovideo.jp/cc/cp/thankschopa2">ニコニコ超パーティーⅡ公式サイト</a></li>
+      </ul>
+  </div>
+</div>			
+			
+
+
+<div id="offer_info">
+		<div class="contents_box">
+				<div class="title_index">
+						<h4>各種情報</h4>
+				</div>
+
+
+				<ul class="link_list">
+						
+                                                                                <li style="background:none !important;">
+                            <a href="http://rd.nicovideo.jp/cc/event/smbccard"><img src="http://uni.res.nimg.jp/img/zero_index/banner/0321visa_offer.jpg"></a>
+                            <a href="http://rd.nicovideo.jp/cc/event/smbccard"><br />5500ポイント貰える！(お祈りメール付)</a>
+                                                        </li>
+                                                    
+
+                                                                                <li>
+                            <a href="http://rd.nicovideo.jp/cc/event/seganama">名越さん生放送のマスコットキャラ募集！</a>
+                            <span style='color:#ff0033; font-weight:bold; font-size:80%'>&nbsp;NEW!</span>                            </li>
+                                                    
+
+                                                                                <li>
+                            <a href="http://rd.nicovideo.jp/cc/event/sundaygp">サンデーで連載！マンガ投稿求む！</a>
+                            <span style='color:#ff0033; font-weight:bold; font-size:80%'>&nbsp;NEW!</span>                            </li>
+                                                    
+
+                        
+
+                                                                                <li>
+                            <a href="http://rd.nicovideo.jp/cc/event/joygumi">カラオケ映像になる★GUMIイラスト募集</a>
+                                                        </li>
+                                                    
+
+                                                                                <li>
+                            <a href="http://rd.nicovideo.jp/cc/event/natsumas">ニコニコの夏イベント★DJ・踊り手ほか募集中</a>
+                            <span style='color:#ff0033; font-weight:bold; font-size:80%'>&nbsp;NEW!</span>                            </li>
+                                                    
+
+                                                                                <li>
+                            <a href="http://rd.nicovideo.jp/cc/event/gagtournament2">第2回ギャグマンガトーナメント</a>
+                                                        </li>
+                                                    
+
+                        
+
+                        
+
+
+                        
+
+
+				</ul>
+
+				                
+                </div>
+</div>			<div id="web_pc_360" class="sideAd clearfix">
+</div><!-- /#web_pc_megatext -->
+
+<script type="text/javascript"><!--
+
+	(function(){
+		var segment = Ads.get_segment_object();
+		new Ads.Advertisement({zone: 153, segments: segment, impression: 2}
+			).set('web_pc_360', function () {
+				return [ this.getTag(), '<br /><span>', this.link(this.getBannertext().replace(/\r?\n/g, '<br>')), '</span>'].join("\n");
+		});
+	})();
+
+--></script>
+
+			
+			
+
+<div id="ticket">
+		<div class="contents_box">
+				<div class="title_index">
+						<h4>各種チケット発売中</h4>
+				</div>
+
+
+				<ul class="link_list">
+						<li><a href="http://rd.nicovideo.jp/cc/nicotop_ticket/tif2013">「TOKYO IDOL FESTIVAL」超前夜祭</a><span style='color:#ff0033; font-weight:bold; font-size:80%'>&nbsp;NEW!</span></li>						<li><a href="http://rd.nicovideo.jp/cc/nicotop_ticket/choparty2">ニコニコ超パーティーII★タイムシフト</a></li>						<li><a href="http://rd.nicovideo.jp/cc/nicotop_ticket/mononoke">舞台『Princess MONONOKE～もののけ姫～』</a></li>																		<li><a href="http://rd.nicovideo.jp/cc/nicotop_ticket/0506root5">√5ライブ♪タイムシフト</a></li>												                        										</ul>
+
+												</div>
+
+</div>			<div class="sideTxtAd">
+	<ul id="web_pc_prtext"></ul>
+</div><!-- /.sideTxtAd -->
+
+<script type="text/javascript"><!--
+
+(function(){
+	var segment = Ads.get_segment_object();
+	new Ads.Advertisement({zone: 132, segments: segment, impression: 2, count: 3}).set('web_pc_prtext', function () {
+		return [ '<li>', this.link(this.getBannertext().escapeHTML()), '</li>'].join("\n");
+	});
+})();
+
+--></script>
+
+			<div id="recommendNews">
+		<div class="contents_box">
+				<div class="title_index">
+						<h4>掲載記事・サイト紹介</h4>
+						<a class="rss_link" href="/recommendnews?rss=2.0" target="_blank">RSS</a>
+				</div>
+								<ul>
+												<li><div class="reccomend_article clearfix">
+						<div class="reccomend_article_box">
+																																			<a href="/recommendnews/2401" target="_blank"><img src="http://uni.res.nimg.jp/img/system/top_recommend_news/2013/05/07/20130507111235_72109.png" /></a>
+																	
+								<h3><a href="/recommendnews/2401" target="_blank">リアルからネットへ「逆侵攻」、自衛隊の思い </a></h3>
+								<p class="rec_name">(日経電子版)</p>
+								</div>
+							</div>
+								<!-- twitterボタン -->
+								<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.nikkei.com/article/DGXZZO54708190W3A500C1000000/" data-text="リアルからネットへ「逆侵攻」、自衛隊の思い " data-lang="ja">ツイート</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+								
+								<!-- facebook イイネボタン -->
+								<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.nikkei.com%2Farticle%2FDGXZZO54708190W3A500C1000000%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
+						</li>
+												<li><div class="reccomend_article clearfix">
+						<div class="reccomend_article_box">
+																
+								<h3><a href="/recommendnews/2399" target="_blank">「ネットとリアルの和解」がニコニコ超会議の役割――ニコニコ超会議2の総括をする「ゲーマーはもっと経営者を目指すべき！」第11回</a></h3>
+								<p class="rec_name">(4Gamer.net)</p>
+								</div>
+							</div>
+								<!-- twitterボタン -->
+								<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.4gamer.net/games/140/G014059/20130502031/" data-text="「ネットとリアルの和解」がニコニコ超会議の役割――ニコニコ超会議2の総括をする「ゲーマーはもっと経営者を目指すべき！」第11回" data-lang="ja">ツイート</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+								
+								<!-- facebook イイネボタン -->
+								<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.4gamer.net%2Fgames%2F140%2FG014059%2F20130502031%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
+						</li>
+												<li><div class="reccomend_article clearfix">
+						<div class="reccomend_article_box">
+																
+								<h3><a href="/recommendnews/2400" target="_blank">アーティストが多数“降臨”したニコニコ超パーティーⅡ、2日間で約111万人動員</a></h3>
+								<p class="rec_name">(musicman-net)</p>
+								</div>
+							</div>
+								<!-- twitterボタン -->
+								<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.musicman-net.com/artist/25628.html" data-text="アーティストが多数“降臨”したニコニコ超パーティーⅡ、2日間で約111万人動員" data-lang="ja">ツイート</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+								
+								<!-- facebook イイネボタン -->
+								<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.musicman-net.com%2Fartist%2F25628.html&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
+						</li>
+												<li><div class="reccomend_article clearfix">
+						<div class="reccomend_article_box">
+																
+								<h3><a href="/recommendnews/2402" target="_blank">超バトル！向谷車掌｢ブルトレ｣vs安倍首相｢あさかぜ号｣「ニコニコ超会議2」にアベノミクス旋風</a></h3>
+								<p class="rec_name">(日経ビジネスオンライン)</p>
+								</div>
+							</div>
+								<!-- twitterボタン -->
+								<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://business.nikkeibp.co.jp/article/report/20130502/247534/?P=1" data-text="超バトル！向谷車掌｢ブルトレ｣vs安倍首相｢あさかぜ号｣「ニコニコ超会議2」にアベノミクス旋風" data-lang="ja">ツイート</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+								
+								<!-- facebook イイネボタン -->
+								<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fbusiness.nikkeibp.co.jp%2Farticle%2Freport%2F20130502%2F247534%2F%3FP%3D1&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
+						</li>
+												<li><div class="reccomend_article clearfix">
+						<div class="reccomend_article_box">
+																
+								<h3><a href="/recommendnews/2397" target="_blank">会場で感じた文化的断絶と&quot;ニコニコ的なるもの&quot;――「ニコニコ超会議」のこれまでとこれから</a></h3>
+								<p class="rec_name">(マイナビニュース)</p>
+								</div>
+							</div>
+								<!-- twitterボタン -->
+								<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://news.mynavi.jp/articles/2013/05/05/choukaigi/index.html" data-text="会場で感じた文化的断絶と&quot;ニコニコ的なるもの&quot;――「ニコニコ超会議」のこれまでとこれから" data-lang="ja">ツイート</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+								
+								<!-- facebook イイネボタン -->
+								<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnews.mynavi.jp%2Farticles%2F2013%2F05%2F05%2Fchoukaigi%2Findex.html&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
+						</li>
+										</ul>
+				<p class="link_right"><a href="/recommendnews" class="icon_cur">一覧</a></p>
+						</div>
+</div>
+<!-- /#recommendNews -->             
+<div id="venus" align="center">
+<a href="http://rd.nicovideo.jp/cc/uni_top/denousen2013" title="テレビCM放映中　第2回将棋電王戦"><img src="http://uni.res.nimg.jp/img/zero_index/banner/dennosen_0420.jpg"></a>
+</div>
+
+		</div><!-- /#sideContents -->
+
+	</div><!-- /#contents -->
+
+	
+<div id="real_event" class="clearfix" data-image="http://uni.res.nimg.jp/img/zero_index/realevent_stage.png">
+
+<div id="real_event_container">
+				<div class="title_index">
+						<h4>リアルイベント情報</h4></div>
+
+	<ul class="link_list">
+			<li class="nicocar"> 			<a href=http://rd.nicovideo.jp/cc/nicotop_town/aa334bc836955857>ニコニコ町会議2013に来てほしい町募集 <img src="http://uni.res.nimg.jp/img/zero_index/icon_new.png" alt="NEW!" title="NEW!"></a>
+		</li>
+			<li > 			<a href=http://rd.nicovideo.jp/cc/nicotop_town/e57bbad95b2fc916>夏イベント★ニコニコ夏マスター <img src="http://uni.res.nimg.jp/img/zero_index/icon_new.png" alt="NEW!" title="NEW!"></a>
+		</li>
+			<li class="nicofarre"> 			<a href=http://rd.nicovideo.jp/cc/nicotop_town/c5b76f0c3dedb89f>｢TOKYO IDOL FESTIVAL｣前夜祭 <img src="http://uni.res.nimg.jp/img/zero_index/icon_new.png" alt="NEW!" title="NEW!"></a>
+		</li>
+		</ul>
+	<a href="http://rd.nicovideo.jp/cc/nicotop_town/farre" class="link_farre" style="background-image:url(http://uni.res.nimg.jp/img/zero_index/real_farre.png);" title="ニコファーレ">ニコファーレ</a>
+
+
+	<a href="http://rd.nicovideo.jp/cc/nicotop_town/nicocaravan" class="link_car" style="background-image:url(http://uni.res.nimg.jp/img/zero_index/real_car.png);" title="ニコニコカー">ニコニコカー</a>
+
+	<a href="http://rd.nicovideo.jp/cc/nicotop_town/honsha" class="link_honsha" style="background-image:url(http://uni.res.nimg.jp/img/zero_index/real_honsha.png);" title="ニコニコ本社">ニコニコ本社</a>
+
+
+	</div>
+</div>	<div id="web_pc_footer" class="footerBanner"></div>
+<script type="text/javascript" language="JavaScript">
+
+	(function(){
+		var segment = Ads.get_segment_object();
+		new Ads.Advertisement({zone: 130, segments: segment, impression: 2}).set('web_pc_footer');
+	})();
+
+</script>
+
+	</div><!-- /#contentsWrap -->
+
+
+<div id="web_pc_sidewall_left" class="sidewallAd"></div>
+<div id="web_pc_sidewall_right" class="sidewallAd"></div>
+<script type="text/javascript"><!--
+	(function(){
+		var segment = Ads.get_segment_object();
+		new Ads.InterlockAds({
+		  advertisements: [
+		    {zoneId: 106, elementId: 'web_pc_premium'},
+		    {zoneId: 145, elementId: 'web_pc_sidewall_left', sidewall: true},
+		    {zoneId: 146, elementId: 'web_pc_sidewall_right', sidewall: true}
+		  ],
+		  impression: 2,
+		  contentsWidth: 996,
+		  segments: segment
+		}).set();
+	})();
+//--></script>
+</div>
+
+<div class="toPageTopWrap">
+	<div class="inner">
+		<a href="#" class="toPageTopBtn"><span></span>ページトップ</a>
+	</div>
+</div><!-- /.toPageTop -->
+
+<div id="footerWrap">
+
+	<div id="footerNav">
+		<div class="outer">
+
+			<h3>niconicoについて</h3>
+			<ul class="footerNavList">
+				<li><a href="http://www.nicovideo.jp/top_service/">サービス一覧</a></li>
+				<li><a href="http://www.nicovideo.jp/rss">RSS（更新情報）一覧</a></li>
+				<li><a href="http://www.upload.nicovideo.jp/license_search/">動画・生放送に使用できる音源の検索</a></li>
+				<li><a href="http://ex.nicovideo.jp/base/declaration">宣言</a></li>
+				<li><a href="http://info.nicovideo.jp/base/term.html">サイトご利用にあたって</a></li>														<li><a href="http://www.nicovideo.jp/q">Qバージョンを利用する</a></li>
+																</ul>
+		</div>
+
+		<div class="outer">
+			<h3>お知らせ</h3>
+			<ul class="footerNavList">
+				<li><a href="http://blog.nicovideo.jp/niconews/">インフォメーション</a></li>
+				<li><a href="http://blog.nicovideo.jp/niconews/ge_function/">機能・お知らせ</a></li>								<li class="noListImg">
+					<ul>
+												<li><a href="http://blog.nicovideo.jp/niconews/ni039398.html">PS Vita「ニコニコ」ver.超会議2 ふりか...(05月07日)</a></li>
+												<li><a href="http://blog.nicovideo.jp/niconews/ni039419.html">ニコニコニュース閲覧時にメッセージが...(05月07日)</a></li>
+											</ul>
+				</li>
+								<li><a href="http://blog.nicovideo.jp/niconews/ge_maintenance/">メンテナンス・障害・復旧</a></li>				<li><a href="http://info.nicovideo.jp/base/phishing.html">フィッシング詐欺にご注意</a></li>			</ul>
+		</div>
+		<div class="outer">
+			<h3>お問い合わせ</h3>
+			<ul class="footerNavList">
+				<li><a href="http://faq.nicovideo.jp/">総合ヘルプ</a></li>
+				<li><a href="http://bbs.nicovideo.jp/request/">要望掲示板</a></li>
+				<li><a href="http://rcp-smile.nicovideo.jp/static/rule/">権利者法人の皆様へ</a></li>
+				<li><a href="https://secure.ch.nicovideo.jp/application/info/top">団体・企業ページ開設</a></li>
+				<li><a href="https://secure.nicovideo.jp/secure/ads_form/">広告出稿</a></li>
+				<li><a href="https://secure.nicovideo.jp/secure/press_form">取材・プレス</a></li>
+				<li><a href="http://rd.nicovideo.jp/cc/nico_footer/recruit">採用情報</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="copyright">
+				<p class="figureWrap">
+			<img src="http://uni.res.nimg.jp/img/base/foot/logo_jasrac.png" alt="Licensed by JASRAC" /><span>JASRAC許諾番号：9013388001Y45123<br>9013388004Y30005</span>
+						<small>&copy;niwango,inc. All rights reserved.</small>
+		</p>
+	</div>
+</div><!-- /#footerWrap -->
+</body>
+</html>
