@@ -1,8 +1,5 @@
 ﻿<?php
 
-  // Warningを表示させない
-  error_reporting(0);
-
   // 単語フィルター（仮）
   $filter = array("★");
   $log = "";
@@ -11,6 +8,7 @@
   function valueFilter($filter, $node)
   {
     global $log;
+
     foreach($filter as $word) {
       if (strstr($node->nodeValue, $word)) {
         $log .=  $node->getAttribute("href")."\n";
@@ -19,7 +17,7 @@
     }
   }
 
-  // リンクを保存
+  // ファイルに保存
   function saveLogs($text)
   {
     $file = fopen("crowler.log", "wb");
@@ -37,11 +35,32 @@
     }
   }
 
-  // HTMLファイル入力
-  $file = "test.html";
-  $doc  = new DOMDocument();
+  // WebからHTMLを読み込む
+  function getHtmlWeb($url)
+  {
+    $doc = new DOMDocument();
+    $doc->loadHTML(file_get_contents($url));
+    return $doc;
+  }
 
-  $doc->loadHTMLFile($file);
+  // ファイルからHTMLを読み込む
+  function getHtmlFile($path)
+  {
+    $doc  = new DOMDocument();
+    $doc->loadHTMLFile($path);
+    return $doc;
+  }
+
+  // 入力されたURL
+  // $url = $_POST['inputurl'];
+
+  // HTMLファイル入力
+  libxml_use_internal_errors(true);
+  // $doc = getHtmlFile("test.html"); 
+  // $doc = getHtmlWeb($url);
+  $doc = getHtmlWeb("http://www.nicovideo.jp/");
+  libxml_clear_errors();
+
   $xpath = new DOMXpath($doc);
 
   // ノード取り出し
@@ -50,6 +69,8 @@
     // echo $node->nodeValue."<br/>\n";
     valueFilter($filter, $node);
   } 
+
+  // ログ保存
   saveLogs($log);
 
 ?>
