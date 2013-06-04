@@ -1,6 +1,6 @@
 ﻿<?php
 
-  // 単語フィルター（仮）
+  // 単語インバースフィルター（仮）
   $filter = array("★");
   $log = "";
 
@@ -35,11 +35,32 @@
     }
   }
 
+
+  function curl_get_contents( $url, $timeout = 60 ){
+    $ch = curl_init();
+    curl_setopt( $ch, CURLOPT_URL, $url );
+    curl_setopt( $ch, CURLOPT_HEADER, false );
+    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+    curl_setopt( $ch, CURLOPT_TIMEOUT, $timeout );
+    $result = curl_exec( $ch );
+    curl_close( $ch );
+    return $result;
+  }
+
   // WebからHTMLを読み込む
   function getHtmlWeb($url)
   {
     $doc = new DOMDocument();
-    $doc->loadHTML(file_get_contents($url));
+
+    $ch = curl_init();
+    curl_setopt( $ch, CURLOPT_URL, $url );
+    curl_setopt( $ch, CURLOPT_HEADER, false );
+    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+    // curl_setopt( $ch, CURLOPT_TIMEOUT, $timeout );
+    $result = curl_exec( $ch );
+    curl_close( $ch );
+
+    $doc->loadHTML($result);
     return $doc;
   }
 
